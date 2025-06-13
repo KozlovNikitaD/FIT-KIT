@@ -1,0 +1,44 @@
+[
+  {
+    "id": "squirrel",
+    "animalImg": "assets/animals/squirrel.png",
+    "productImg": "assets/products/brownie.png",
+    "name": "Белка-орешек",
+    "desc": "Белка, которая обожает шоколад и орехи!"
+  },
+  {
+    "id": "rabbit",
+    "animalImg": "assets/animals/rabbit.png",
+    "productImg": "assets/products/cake.png",
+    "name": "Грушевый кролик",
+    "desc": "Кролик с грушей и ванилью — символ нежности и пользы."
+  },
+  {
+    "id": "cat",
+    "animalImg": "assets/animals/cat.png",
+    "productImg": "assets/products/cookie.png",
+    "name": "Черничный кот",
+    "desc": "Кот с глазами-черникой, любит сладкое без сахара!"
+  },
+  {
+    "id": "fox",
+    "animalImg": "assets/animals/fox.png",
+    "productImg": "assets/products/strawberrycake.png",
+    "name": "Лиса-клубничка",
+    "desc": "Хитрая лиса, которая обожает клубничные десерты!"
+  },
+  {
+    "id": "wolf",
+    "animalImg": "assets/animals/wolf.png",
+    "productImg": "assets/products/chokocake.png",
+    "name": "Шоколадный волк",
+    "desc": "Волк с нежным шоколадным характером!"
+  },
+  {
+    "id": "duck",
+    "animalImg": "assets/animals/duck.png",
+    "productImg": "assets/products/phistashko.png",
+    "name": "Фисташковая уточка",
+    "desc": "Уточка, которая любит фисташковые сладости!"
+  }
+] 

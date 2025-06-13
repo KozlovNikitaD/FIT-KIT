@@ -1,0 +1,291 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #fff 0%, #ffe4f0 100%);
+    min-height: 100vh;
+}
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen.active {
+    display: flex;
+}
+.logo {
+    max-width: 300px;
+    width: 80vw;
+    margin-bottom: 40px;
+}
+#play-btn {
+    background: #ff4fa3;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 18px 48px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(255,79,163,0.15);
+    transition: background 0.2s, transform 0.2s;
+}
+#play-btn:hover {
+    background: #e13b8b;
+    transform: scale(1.05);
+}
+.fitkit-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 140px;
+    background: #ff4fa3;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 900;
+    border-radius: 50%;
+    margin-bottom: 32px;
+    letter-spacing: 0.08em;
+    box-shadow: 0 4px 24px rgba(255,79,163,0.18);
+    text-align: center;
+    text-transform: uppercase;
+}
+@media (max-width: 600px) {
+    .logo {
+        max-width: 180px;
+        margin-bottom: 24px;
+    }
+    #play-btn {
+        font-size: 1.1rem;
+        padding: 12px 28px;
+    }
+    .fitkit-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 79, 163, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(255,79,163,0.18);
+    padding: 32px 24px 24px 24px;
+    min-width: 280px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-content h2 {
+    color: #ff4fa3;
+    margin-bottom: 18px;
+}
+#code-input {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ffb3de;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    width: 180px;
+    text-align: center;
+}
+#submit-code-btn {
+    background: #ff4fa3;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: background 0.2s;
+}
+#submit-code-btn:hover {
+    background: #e13b8b;
+}
+#code-error {
+    color: #ff4fa3;
+    font-size: 0.95rem;
+    margin-top: 4px;
+    min-height: 20px;
+}
+
+/* Анимация открытия кейса */
+.case-animation {
+    width: 220px;
+    height: 220px;
+    background: linear-gradient(135deg, #fff 60%, #ffe4f0 100%);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(255,79,163,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+    position: relative;
+    animation: caseOpen 3s cubic-bezier(.7,-0.01,.3,1.01);
+}
+@keyframes caseOpen {
+    0% { transform: scale(0.7) rotate(-10deg); opacity: 0.2; }
+    60% { transform: scale(1.1) rotate(6deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 300px;
+}
+.main-nav button {
+    background: #ff4fa3;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(255,79,163,0.10);
+    transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+    outline: none;
+    width: 100%;
+}
+.main-nav button:hover, .main-nav button:focus {
+    background: #e13b8b;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 18px rgba(255,79,163,0.18);
+}
+@media (max-width: 600px) {
+    .main-nav {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+    .main-nav button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+}
+
+.animal-card {
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 8px 32px rgba(255,79,163,0.13);
+    padding: 32px 24px 24px 24px;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: animalAppear 1.1s cubic-bezier(.7,-0.01,.3,1.01);
+}
+@keyframes animalAppear {
+    0% { transform: scale(0.7) translateY(40px); opacity: 0.1; }
+    60% { transform: scale(1.08) translateY(-8px); opacity: 1; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+.animal-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 24px #ffb3de33;
+}
+.animal-card .animal-name {
+    color: #ff4fa3;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.animal-card .animal-desc {
+    color: #444;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+#save-to-collection-btn {
+    background: #ff4fa3;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 12px rgba(255,79,163,0.10);
+}
+#save-to-collection-btn:hover {
+    background: #e13b8b;
+    transform: scale(1.04);
+}
+#save-success {
+    color: #ff4fa3;
+    font-size: 1.05rem;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 24px;
+}
+
+.collection-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.collection-list .animal-card {
+    margin: 0;
+}
+
+.main-image {
+    margin-bottom: 32px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255,79,163,0.15);
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .main-image {
+        max-width: 90%;
+    }
+} 
